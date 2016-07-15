@@ -1,7 +1,8 @@
 import axios from 'axios';
 
-const API_KEY = 94badd64d670682ddf96dfc942e3575a
-const ROOT_URL = `api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`;
+const API_KEY = '94badd64d670682ddf96dfc942e3575a';
+const ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`;
+
 export const FETCH_WEATHER = 'FETCH_WEATHER';
 
 export function fetchWeather(city) {
@@ -9,13 +10,10 @@ export function fetchWeather(city) {
   const request = axios.get(url);
 
   return {
-    type: FETCH_WEATHER
+    type: FETCH_WEATHER,
     payload: request
   };
 }
-
-
-
 
 // You can seach weather forecast for 5 days with data every 3 hours by city name. All weather data can be obtained in JSON, XML or HTML format.
 // API call:
